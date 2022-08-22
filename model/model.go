@@ -18,7 +18,7 @@ type (
 		Subtitle     string         `json:"subtitle,omitempty"`
 		Arg          string         `json:"arg,omitempty"`
 		Autocomplete string         `json:"autocomplete,omitempty"`
-		Icon         Icon           `json:"icon,omitempty"`
+		Icon         *Icon          `json:"icon,omitempty"`
 		Valid        bool           `json:"valid,omitempty"`
 		Match        string         `json:"match,omitempty"`
 		Mods         map[string]Mod `json:"mods,omitempty"`
@@ -27,11 +27,11 @@ type (
 	}
 
 	Mgr struct {
-		Items []Item `json:"items,omitempty"`
+		Items []*Item `json:"items,omitempty"`
 	}
 )
 
-func (mgr *Mgr) AddItem(item Item) {
+func (mgr *Mgr) AddItem(item *Item) {
 	mgr.Items = append(mgr.Items, item)
 }
 
@@ -41,4 +41,10 @@ func (mgr *Mgr) PrintJson() {
 		panic(e)
 	}
 	fmt.Println(string(b))
+}
+
+func (i *Icon) For(item *Item) {
+	if item != nil {
+		item.Icon = i
+	}
 }

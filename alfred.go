@@ -4,16 +4,16 @@ import "github.com/luanruiosng/alfred/model"
 
 func NewMgr() *model.Mgr {
 	return &model.Mgr{
-		Items: make([]model.Item, 0),
+		Items: make([]*model.Item, 0),
 	}
 }
 
-func NewIcon(path string) model.Icon {
+func NewIcon(path string) *model.Icon {
 	return NewIconByType("", path)
 }
 
-func NewIconByType(iconType, path string) model.Icon {
-	return model.Icon{
+func NewIconByType(iconType, path string) *model.Icon {
+	return &model.Icon{
 		Type: iconType,
 		Path: path,
 	}
@@ -27,12 +27,12 @@ func NewModByMap(m map[string]string) model.Mod {
 	return model.Mod(m)
 }
 
-func NewItem() model.Item {
-	return model.Item{}
+func NewItem() *model.Item {
+	return &model.Item{}
 }
 
-func NewDefItem(title, subTitle string) model.Item {
-	return model.Item{
+func NewDefItem(title, subTitle string) *model.Item {
+	return &model.Item{
 		Title:    title,
 		Subtitle: subTitle,
 	}
