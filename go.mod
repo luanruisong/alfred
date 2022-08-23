@@ -1,3 +1,3 @@
-module github.com/luanruiosng/alfred
+module github.com/luanruisong/alfred
 
 go 1.17
