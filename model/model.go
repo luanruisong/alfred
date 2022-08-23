@@ -35,6 +35,13 @@ func (mgr *Mgr) AddItem(item *Item) {
 	mgr.Items = append(mgr.Items, item)
 }
 
+func (item *Item) AddMod(cmd string, mod Mod) {
+	if item.Mods == nil {
+		item.Mods = make(map[string]Mod)
+	}
+	item.Mods[cmd] = mod
+}
+
 func (mgr *Mgr) PrintJson() {
 	b, e := json.Marshal(mgr)
 	if e != nil {
