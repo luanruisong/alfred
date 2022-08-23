@@ -1,6 +1,6 @@
 package alfred
 
-import "github.com/luanruiosng/alfred/model"
+import "github.com/luanruisong/alfred/model"
 
 func NewMgr() *model.Mgr {
 	return &model.Mgr{
