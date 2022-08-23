@@ -31,9 +31,10 @@ func NewItem() *model.Item {
 	return &model.Item{}
 }
 
-func NewDefItem(title, subTitle string) *model.Item {
+func NewDefItem(title, subTitle, arg string) *model.Item {
 	return &model.Item{
 		Title:    title,
 		Subtitle: subTitle,
+		Arg:      arg,
 	}
 }
