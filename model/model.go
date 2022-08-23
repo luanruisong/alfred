@@ -43,8 +43,9 @@ func (mgr *Mgr) PrintJson() {
 	fmt.Println(string(b))
 }
 
-func (i *Icon) For(item *Item) {
+func (i *Icon) For(item *Item) *Item {
 	if item != nil {
 		item.Icon = i
 	}
+	return item
 }
