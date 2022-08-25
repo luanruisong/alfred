@@ -5,6 +5,7 @@ import (
 	"fmt"
 )
 
+//https://www.alfredapp.com/help/workflows/inputs/script-filter/json/
 type (
 	Icon struct {
 		Type string `json:"type,omitempty"`
